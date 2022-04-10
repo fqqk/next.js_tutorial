@@ -21,7 +21,7 @@ export default function Post({ postData }) {
   );
 }
 
-//next.jsが用意している特別なメソッド
+//next.jsが用意している特別なメソッド。サーバーサイドで動いている
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
