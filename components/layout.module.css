@@ -1,0 +1,16 @@
+.container {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+  //rem:HTMLの最上位要素であるhtmlタグの文字サイズを基準に文字サイズが設定され、親要素の影響を受けない
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
