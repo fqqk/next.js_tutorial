@@ -20,6 +20,7 @@ export default function Post({ postData }) {
         <meta property="og:description" content={postData.contentHtml} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:image" content={ImgSrc} />
+        <meta name="twitter:image" content={ImgSrc} />
         <meta property="og:url" content={SiteUrl} />
       </Head>
 
