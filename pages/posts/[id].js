@@ -16,8 +16,8 @@ export default function Post({ postData }) {
     <Layout>
       <Head>
         <title>{postData.title}</title>
-        <meta property="og:title" content="aaa" />
-        <meta property="og:description" content="aaa" />
+        <meta property="og:title" content={postData.title} />
+        <meta property="og:description" content={postData.contentHtml} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:image" content={ImgSrc} />
         <meta property="og:url" content={SiteUrl} />
@@ -31,7 +31,7 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
       <TwitterShareButton
-        title="faffa"
+        title={postData.title}
         url={SiteUrl}
         hashtags={hashtags}
         style={{
