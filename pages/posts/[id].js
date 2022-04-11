@@ -3,13 +3,26 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
+import kaminari from "../../public/images/kaminari.png";
+import { TwitterShareButton } from "react-share";
+
+const SiteUrl = "https://next-js-tutorial-azure.vercel.app/";
+const ImgSrc = `${SiteUrl}${kaminari.src}`;
+const hashtags = ["心の戦闘力診断"];
+console.log(kaminari.src);
 
 export default function Post({ postData }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
+        <meta property="og:title" content="aaa" />
+        <meta property="og:description" content="aaa" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content={ImgSrc} />
+        <meta property="og:url" content={SiteUrl} />
       </Head>
+
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
@@ -17,6 +30,25 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <TwitterShareButton
+        title="faffa"
+        url={SiteUrl}
+        hashtags={hashtags}
+        style={{
+          background: "#359BF0",
+          borderRadius: 5,
+          padding: "3px",
+        }}
+      >
+        <span
+          style={{
+            color: "white",
+            fontFamily: "sans-serif",
+          }}
+        >
+          ツイート
+        </span>
+      </TwitterShareButton>
     </Layout>
   );
 }
